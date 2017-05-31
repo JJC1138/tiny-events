@@ -2,14 +2,29 @@ import XCTest
 @testable import TinyEvents
 
 class TinyEventsTests: XCTestCase {
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        XCTAssertEqual(TinyEvents().text, "Hello, World!")
+    
+    var observers = [TinyEventObserver]()
+    
+    func testSimple() {
+        let event = TinyEvent()
+        var didFire = false
+        observers.append(event.add {
+            didFire = true
+        })
+        
+        XCTAssertFalse(didFire)
+        event.fire()
+        XCTAssertTrue(didFire)
     }
-
-
+    
+    override func tearDown() {
+        observers.removeAll()
+        
+        super.tearDown()
+    }
+    
     static var allTests = [
-        ("testExample", testExample),
+        ("testSimple", testSimple),
     ]
+    
 }
