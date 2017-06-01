@@ -3,24 +3,17 @@ import XCTest
 
 class TinyEventsTests: XCTestCase {
     
-    var observers = [TinyEventObserver]()
-    
     func testSimple() {
         let event = TinyEvent()
         var didFire = false
-        observers.append(event.add {
+        let observer = event.add {
             didFire = true
-        })
-        
-        XCTAssertFalse(didFire)
-        event.fire()
-        XCTAssertTrue(didFire)
-    }
-    
-    override func tearDown() {
-        observers.removeAll()
-        
-        super.tearDown()
+        }
+        withExtendedLifetime(observer) {
+            XCTAssertFalse(didFire)
+            event.fire()
+            XCTAssertTrue(didFire)
+        }
     }
     
     static var allTests = [
