@@ -1,5 +1,7 @@
 public class TinyEventWithData<T> {
     
+    public init() {}
+    
     public func add(_ callback: @escaping (T) -> Void) -> TinyEventWithDataObserver<T> {
         let observer = TinyEventWithDataObserver(event: self, callback: callback)
         observers.append(WeakTinyEventObserver(observer: observer))
