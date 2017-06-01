@@ -16,8 +16,23 @@ class TinyEventsTests: XCTestCase {
         }
     }
     
+    func testWithIntData() {
+        let event = TinyEventWithData<Int>()
+        let data = 1138
+        var dataFromObserver = 0
+        let observer = event.add { eventData in
+            XCTAssertEqual(data, eventData)
+            dataFromObserver = eventData
+        }
+        withExtendedLifetime(observer) {
+            event.fire(data)
+        }
+        XCTAssertEqual(data, dataFromObserver)
+    }
+    
     static var allTests = [
         ("testSimple", testSimple),
+        ("testWithIntData", testWithIntData),
     ]
     
 }
