@@ -100,6 +100,16 @@ class TinyEventsTests: XCTestCase {
         XCTAssertNotNil(ratingFromObserver)
     }
     
+    func testEventDestroyedBeforeObserver() {
+        var event: TinyEvent? = TinyEvent()
+        var observer: TinyEventObserver? = event!.add { XCTAssert(true) }
+        withExtendedLifetime(observer) {
+            event!.fire()
+            event = nil
+        }
+        observer = nil
+    }
+    
     static var allTests = [
         ("testSimple", testSimple),
         ("testWithIntData", testWithIntData),
@@ -107,6 +117,7 @@ class TinyEventsTests: XCTestCase {
         ("testRemovingObserver", testRemovingObserver),
         ("testMultipleObservers", testMultipleObservers),
         ("testWithMultiplePiecesOfData", testWithMultiplePiecesOfData),
+        ("testEventDestroyedBeforeObserver", testEventDestroyedBeforeObserver),
     ]
     
 }
