@@ -14,6 +14,7 @@ public class TinyEventWithData<T> {
             if let o = observer.observer {
                 o.callback(parameter)
             } else {
+                // I have seen this happen in the wild, but I'm afraid I can't remember and can't figure out how it happened, so this needs more investigation. The code does the safe thing anyway.
                 anObserverHasBeenDeallocated = true
             }
         }
@@ -24,8 +25,7 @@ public class TinyEventWithData<T> {
     }
     
     fileprivate func removeDeadObserver() {
-        // This force-unwrap is valid because we know that the now-nil observer will always be found because it will only ever be removed once when it is deinitializing:
-        let observerIndex = observers.index(where: { $0.observer == nil })!
+        guard let observerIndex = observers.index(where: { $0.observer == nil }) else { return }
         observers.remove(at: observerIndex)
     }
     
