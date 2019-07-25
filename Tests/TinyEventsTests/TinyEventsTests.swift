@@ -1,5 +1,6 @@
 import XCTest
-@testable import TinyEvents
+
+import TinyEvents
 
 class TinyEventsTests: XCTestCase {
     
