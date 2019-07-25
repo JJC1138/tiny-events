@@ -110,15 +110,5 @@ class TinyEventsTests: XCTestCase {
         }
         observer = nil
     }
-    
-    static var allTests = [
-        ("testSimple", testSimple),
-        ("testWithIntData", testWithIntData),
-        ("testFiringRepeatedly", testFiringRepeatedly),
-        ("testRemovingObserver", testRemovingObserver),
-        ("testMultipleObservers", testMultipleObservers),
-        ("testWithMultiplePiecesOfData", testWithMultiplePiecesOfData),
-        ("testEventDestroyedBeforeObserver", testEventDestroyedBeforeObserver),
-    ]
-    
+     
 }

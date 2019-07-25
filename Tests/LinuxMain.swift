@@ -1,6 +1,8 @@
 import XCTest
-@testable import TinyEventsTests
 
-XCTMain([
-    testCase(TinyEventsTests.allTests),
-])
+import TinyEventsTests
+
+var tests = [XCTestCaseEntry]()
+tests += TinyEventsTests.__allTests()
+
+XCTMain(tests)
