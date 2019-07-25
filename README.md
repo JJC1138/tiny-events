@@ -1,5 +1,5 @@
 # TinyEvents
-A tiny event system for Swift (1 source file, 59 lines of code)
+A tiny event system for Swift (1 source file, 109 lines of code)
 
 ## Usage
 ```Swift
