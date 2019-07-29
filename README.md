@@ -67,7 +67,7 @@ Please see the [Automatic Reference Counting chapter of The Swift Programming La
 
 ## Installation
 
-You can add TinyEvents to your project using the [Swift Package Manager](https://swift.org/package-manager/) (or [Xcode's integration with the Swift Package Manager](https://developer.apple.com/videos/play/wwdc2019/408/)) by adding this repository to your dependencies, or you can just drop the [`TinyEvents.swift`](https://raw.githubusercontent.com/JJC1138/tiny-events/master/Sources/TinyEvents.swift) file into your project.
+You can add TinyEvents to your project using the [Swift Package Manager](https://swift.org/package-manager/) (or [Xcode's integration with the Swift Package Manager](https://developer.apple.com/videos/play/wwdc2019/408/)) by adding this repository to your dependencies, or you can just drop the [`TinyEvents.swift`](https://raw.githubusercontent.com/JJC1138/tiny-events/master/Sources/TinyEvents/TinyEvents.swift) file into your project.
 
 ## Stability and Support
 
