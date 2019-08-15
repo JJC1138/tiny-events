@@ -1,6 +1,10 @@
 # TinyEvents
 A tiny event system for Swift (1 source file, 113 lines of code)
 
+## Stability and Support
+
+I'm using TinyEvents in production in my app [Day Planner](https://dayplanner.app/), but I'm currently transitioning away from it in favor of Apple's new [Combine](https://developer.apple.com/documentation/combine) framework, and expect to stop supporting TinyEvents soon. Combine's [`PassthroughSubject<Void, Never>`](https://developer.apple.com/documentation/combine/passthroughsubject) works as an almost drop-in replacement for `TinyEvent` (and use `PassthroughSubject<T, Never>` as a replacement for `TinyEventWithData<T>`).
+
 ## Usage
 ```Swift
 import TinyEvents
@@ -68,12 +72,6 @@ Please see the [Automatic Reference Counting chapter of The Swift Programming La
 ## Installation
 
 You can add TinyEvents to your project using the [Swift Package Manager](https://swift.org/package-manager/) (or [Xcode's integration with the Swift Package Manager](https://developer.apple.com/videos/play/wwdc2019/408/)) by adding this repository to your dependencies, or you can just drop the [`TinyEvents.swift`](https://raw.githubusercontent.com/JJC1138/tiny-events/master/Sources/TinyEvents/TinyEvents.swift) file into your project.
-
-## Stability and Support
-
-I'm using TinyEvents in production in my app [Day Planner](https://dayplanner.app/) and I intend to keep it updated for any breaking changes in new Swift versions, but I don't have any plans for adding new features. If you'd like a slightly heavier event system with more GitHub stars I'd suggest having a look at [emitter-kit](https://github.com/aleclarson/emitter-kit) or [Observable-Swift](https://github.com/slazyk/Observable-Swift).
-
-Please use GitHub issues for questions, bug reports, suggestions, and patches.
 
 ## Frequently Asked Questions
 
