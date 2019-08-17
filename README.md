@@ -1,9 +1,8 @@
+# ⚠️ Deprecated and No Longer Maintained ⚠️
+iOS 13 and Apple's other 2019 operating systems include the new [Combine](https://developer.apple.com/documentation/combine) event handling framework. I have transitioned my own app [Day Planner](https://dayplanner.app/) to use Combine instead of TinyEvents so I don't plan to make any further updates to this library, and would encourage you to also move to Combine when possible. The transition is nice and simple because Combine's [`PassthroughSubject<Void, Never>`](https://developer.apple.com/documentation/combine/passthroughsubject) works as an almost drop-in replacement for `TinyEvent` (and use `PassthroughSubject<T, Never>` as a replacement for `TinyEventWithData<T>`).
+
 # TinyEvents
 A tiny event system for Swift (1 source file, 113 lines of code)
-
-## Stability and Support
-
-I'm using TinyEvents in production in my app [Day Planner](https://dayplanner.app/), but I'm currently transitioning away from it in favor of Apple's new [Combine](https://developer.apple.com/documentation/combine) framework, and expect to stop supporting TinyEvents soon. Combine's [`PassthroughSubject<Void, Never>`](https://developer.apple.com/documentation/combine/passthroughsubject) works as an almost drop-in replacement for `TinyEvent` (and use `PassthroughSubject<T, Never>` as a replacement for `TinyEventWithData<T>`).
 
 ## Usage
 ```Swift
